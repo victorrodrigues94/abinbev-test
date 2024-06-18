@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+  bebidas-api:
+    build: .
+    container_name: bebidas-api
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=bebidasdb
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+    depends_on:
+      - mongodb
+      - rabbitmq
+
+volumes:
+  mongo-data:
