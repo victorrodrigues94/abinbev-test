@@ -13,6 +13,8 @@ public class DrinkResponseDto {
 	private Double preco;
 	private int quantidade;
 	
+	public DrinkResponseDto() {}
+	
 	public DrinkResponseDto(Drink drink) {
 		super();
 		this.id = drink.getId();
