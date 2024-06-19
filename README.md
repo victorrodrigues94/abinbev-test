@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Projeto teste API para cadastro de bebidas, construída com Spring Boot. A API permite operações CRUD (Create, Read, Update, Delete) em um banco de dados MongoDB, e inclui funcionalidades de mensageria com RabbitMQ. A API também utiliza um banco de dados Mongo Embed para testes unitários.
+Projeto teste API para cadastro de bebidas, construída com Spring Boot. A API permite operações CRUD em um banco de dados MongoDB, e inclui funcionalidades de mensageria com RabbitMQ. A API também utiliza um banco de dados Mongo Embed para testes unitários.
 
 ## Funcionalidades
 
