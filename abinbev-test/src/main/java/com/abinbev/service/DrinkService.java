@@ -51,6 +51,9 @@ public class DrinkService {
 		if (drinkRequestDto.getPreco() != null) {
 			drink.setPreco(drinkRequestDto.getPreco());
 		}
+		if (drinkRequestDto.getQuantidade() != null) {
+			drink.setQuantidade(drinkRequestDto.getQuantidade());
+		}
 
 		drink = drinkRepository.save(drink);
 		return new DrinkResponseDto(drink);
