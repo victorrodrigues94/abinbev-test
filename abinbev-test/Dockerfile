@@ -3,10 +3,10 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Executar apenas o teste DrinkRepositoryTest usando MongoDB embutido
 RUN mvn test -Dtest=DrinkRepositoryTest
+RUN mvn test -Dtest=DrinkControllerTest
+RUN mvn test -Dtest=DrinkServiceTest
 
-# Caso os testes passem, então faça o pacote
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
