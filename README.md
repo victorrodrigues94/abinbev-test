@@ -22,10 +22,19 @@ Projeto teste API para cadastro de bebidas, construída com Spring Boot. A API p
 - **Atualização Parcial de Bebidas (PATCH)**
   - Endpoint: `/bebidas/{id}`
   - Descrição: Atualiza parcialmente um registro de bebida existente.
+  - - Payload dos dados a serem atualizados:
+    ```json
+    {
+      "nome": "string",
+      "tipo": "string",
+      "preco": "double",
+      "quantidade": "integer"
+    }
+    ```
 
 - **Consulta de Bebidas (GET)**
   - Endpoint: `/bebidas`
-  - Descrição: Retorna todas as bebidas cadastradas. Permite filtrar por nome e tipo.
+  - Descrição: Retorna todas as bebidas cadastradas. Permite filtrar por nome e tipo (query params).
 
 - **Mensageria**
   - Publicação de mensagens via RabbitMQ sempre que uma nova bebida for cadastrada.
