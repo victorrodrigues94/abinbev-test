@@ -45,6 +45,8 @@ Projeto teste API para cadastro de bebidas, construída com Spring Boot. A API p
 - Spring Boot 3.3.0
 - MongoDB
 - MongoDB Embed (Para testes)
+- JUnit
+- Mockito
 - RabbitMQ
 - Maven
 
