@@ -12,8 +12,9 @@ public class Drink {
 	@Id
 	private String id;
 	private String nome;
-    private String tipo;
-    private Double preco;
-    private Integer quantidade;
-	
+	private String tipo;
+	private Double preco;
+	private Integer quantidade;
+
+
 }

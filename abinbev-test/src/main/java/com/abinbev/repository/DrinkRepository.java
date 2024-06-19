@@ -12,12 +12,12 @@ import com.abinbev.model.Drink;
 public interface DrinkRepository extends MongoRepository<Drink,String> {
 	
 	@Query("{ 'nome': { $regex: ?0, $options: 'i' } }")
-    List<Drink> findByNomeRegex(String nome);
+    List<Drink> findByNome(String nome);
     
     @Query("{ 'tipo': { $regex: ?0, $options: 'i' } }")
-    List<Drink> findByTipoRegex(String tipo);
+    List<Drink> findByTipo(String tipo);
     
     @Query("{ 'nome': { $regex: ?0, $options: 'i' }, 'tipo': { $regex: ?1, $options: 'i' } }")
-    List<Drink> findByNomeAndTipoRegex(String nome, String tipo);
+    List<Drink> findByNomeAndTipo(String nome, String tipo);
 
 }

@@ -59,11 +59,11 @@ public class DrinkService {
 	public List<DrinkResponseDto> findDrinkByParams(String nome, String tipo) {
 		List<Drink> drink;
 		if (nome != null && tipo != null) {
-			drink = drinkRepository.findByNomeAndTipoRegex(nome, tipo);
+			drink = drinkRepository.findByNomeAndTipo(nome, tipo);
 		} else if (nome != null) {
-			drink = drinkRepository.findByNomeRegex(nome);
+			drink = drinkRepository.findByNome(nome);
 		} else if (tipo != null) {
-			drink = drinkRepository.findByTipoRegex(tipo);
+			drink = drinkRepository.findByTipo(tipo);
 		} else {
 			drink = drinkRepository.findAll();
 		}
